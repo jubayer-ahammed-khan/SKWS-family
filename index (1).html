@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>সত্যের কাফেলা ওয়েলফেয়ার সোসাইটি ফ্যামিলি</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:       #0a1628;
+      --navy-mid:   #112240;
+      --navy-light: #1a3a6b;
+      --gold:       #c9a84c;
+      --gold-light: #e8c96a;
+      --white:      #ffffff;
+      --text-main:  #e8e8e8;
+      --text-muted: #8899bb;
+      --card-bg:    #0f1f3d;
+      --card-border:#1e3a6e;
+      --shadow:     0 8px 32px rgba(0,0,0,0.4);
+      --radius:     12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background-color: var(--navy);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 10%, rgba(26,58,107,0.4) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(201,168,76,0.08) 0%, transparent 50%);
+      pointer-events: none; z-index: 0;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: relative; z-index: 10;
+      background: linear-gradient(160deg, #0d1e3f 0%, #0a1628 60%, #0d1a30 100%);
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding: 28px 24px; overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute; top: -60px; left: 50%;
+      transform: translateX(-50%);
+      width: 500px; height: 200px;
+      background: radial-gradient(ellipse, rgba(201,168,76,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .logo-wrap {
+      display: flex; align-items: center; justify-content: center;
+      gap: 20px; max-width: 700px; margin: 0 auto;
+    }
+    .logo-img {
+      width: 90px; height: 90px; border-radius: 50%; object-fit: cover;
+      border: 2px solid rgba(201,168,76,0.55);
+      box-shadow: 0 0 28px rgba(201,168,76,0.25), 0 4px 20px rgba(0,0,0,0.5);
+      flex-shrink: 0; animation: glow 3.5s ease-in-out infinite;
+    }
+    @keyframes glow {
+      0%,100% { box-shadow: 0 0 20px rgba(201,168,76,0.2), 0 4px 20px rgba(0,0,0,0.5); }
+      50%      { box-shadow: 0 0 40px rgba(201,168,76,0.5), 0 4px 20px rgba(0,0,0,0.5); }
+    }
+    .header-text { text-align: left; }
+    .org-en {
+      font-size: 10.5px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--gold); opacity: 0.8; margin-bottom: 4px;
+    }
+    .gold-bar {
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold), rgba(201,168,76,0.15));
+      margin-bottom: 6px;
+    }
+    .org-bn {
+      font-family: 'Tiro Bangla', serif;
+      font-size: clamp(16px, 4vw, 24px); color: var(--white);
+      line-height: 1.3; margin-bottom: 4px;
+    }
+    .org-sub { font-size: 12.5px; color: var(--text-muted); }
+    .org-sub span { color: var(--gold); font-weight: 500; }
+    @media (max-width: 460px) {
+      .logo-wrap { flex-direction: column; gap: 12px; }
+      .header-text { text-align: center; }
+      .gold-bar { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    }
+
+    /* ── MAIN ── */
+    main {
+      position: relative; z-index: 1;
+      max-width: 1100px; margin: 0 auto;
+      padding: 28px 16px 60px;
+    }
+
+    /* ── SEARCH ── */
+    .search-wrap { margin-bottom: 24px; animation: fadeUp 0.4s ease both; }
+    .search-box {
+      display: flex; align-items: center;
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 50px; padding: 4px 4px 4px 18px;
+      gap: 8px; box-shadow: var(--shadow); transition: border-color 0.3s;
+    }
+    .search-box:focus-within {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.12), var(--shadow);
+    }
+    .search-box input {
+      flex: 1; background: none; border: none; outline: none;
+      color: var(--text-main); font-family: 'Hind Siliguri', sans-serif;
+      font-size: 15px; padding: 10px 0;
+    }
+    .search-box input::placeholder { color: var(--text-muted); }
+    .search-ico { font-size: 17px; color: var(--text-muted); flex-shrink: 0; }
+    .search-btn {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy); border: none; border-radius: 40px;
+      padding: 10px 22px; font-family: 'Hind Siliguri', sans-serif;
+      font-size: 14px; font-weight: 700; cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s; white-space: nowrap;
+    }
+    .search-btn:hover { transform: scale(1.04); box-shadow: 0 4px 14px rgba(201,168,76,0.4); }
+
+    /* ── FILTERS ── */
+    .filter-wrap { margin-bottom: 24px; animation: fadeUp 0.4s 0.08s ease both; }
+    .filter-label {
+      font-size: 11px; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 10px;
+    }
+    .filter-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .f-btn {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      color: var(--text-muted); border-radius: 30px; padding: 7px 16px;
+      font-family: 'Hind Siliguri', sans-serif; font-size: 13px; font-weight: 500;
+      cursor: pointer; transition: all 0.22s; white-space: nowrap;
+    }
+    .f-btn:hover, .f-btn.active {
+      background: var(--navy-light); border-color: var(--gold);
+      color: var(--gold-light); box-shadow: 0 0 10px rgba(201,168,76,0.15);
+    }
+
+    /* ── RESULTS INFO ── */
+    .results-info {
+      font-size: 12.5px; color: var(--text-muted);
+      margin-bottom: 18px; display: none;
+    }
+    .results-info b { color: var(--gold-light); }
+
+    /* ── GRID ── */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px,1fr)); gap: 16px; }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: var(--radius); padding: 18px 18px 28px;
+      cursor: pointer; position: relative; overflow: hidden;
+      transition: all 0.28s cubic-bezier(0.25,0.8,0.25,1);
+    }
+    .card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      opacity: 0; transition: opacity 0.28s;
+    }
+    .card:hover {
+      border-color: var(--gold); transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5), 0 0 18px rgba(201,168,76,0.1);
+    }
+    .card:hover::before { opacity: 1; }
+    .card-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 20px; padding: 3px 10px;
+      font-size: 11.5px; color: var(--gold); font-weight: 500; margin-bottom: 10px;
+    }
+    .card-title {
+      font-family: 'Tiro Bangla', serif; font-size: 17px;
+      color: var(--white); line-height: 1.4; margin-bottom: 3px;
+    }
+    .card-sub { font-size: 12.5px; color: var(--text-muted); font-style: italic; margin-bottom: 7px; }
+    .card-loc { font-size: 12.5px; color: var(--text-muted); }
+    .card-arrow {
+      position: absolute; bottom: 13px; right: 14px;
+      color: var(--gold); font-size: 16px;
+      opacity: 0; transform: translateX(-6px); transition: all 0.28s;
+    }
+    .card:hover .card-arrow { opacity: 1; transform: translateX(0); }
+
+    /* ── STATES ── */
+    .state-box { text-align: center; padding: 56px 20px; color: var(--text-muted); }
+    .state-box .ico { font-size: 44px; margin-bottom: 14px; }
+    .state-box p { font-size: 15px; }
+    .spinner {
+      width: 34px; height: 34px; border: 3px solid var(--card-border);
+      border-top-color: var(--gold); border-radius: 50%;
+      animation: spin 0.75s linear infinite; margin: 0 auto 14px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── MODAL ── */
+    .overlay {
+      position: fixed; inset: 0; background: rgba(5,12,28,0.88);
+      backdrop-filter: blur(6px); z-index: 100;
+      display: flex; align-items: center; justify-content: center;
+      padding: 16px; opacity: 0; pointer-events: none; transition: opacity 0.28s;
+    }
+    .overlay.open { opacity: 1; pointer-events: all; }
+    .modal {
+      background: var(--navy-mid); border: 1px solid var(--card-border);
+      border-radius: 16px; max-width: 500px; width: 100%;
+      max-height: 92vh; overflow-y: auto;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.7), 0 0 40px rgba(201,168,76,0.08);
+      transform: translateY(18px) scale(0.97);
+      transition: transform 0.28s cubic-bezier(0.25,0.8,0.25,1);
+      position: relative;
+    }
+    .overlay.open .modal { transform: translateY(0) scale(1); }
+    .modal-photo {
+      width: 100%; height: 190px; object-fit: cover;
+      border-radius: 16px 16px 0 0; display: block;
+    }
+    .modal-photo-ph {
+      width: 100%; height: 190px; border-radius: 16px 16px 0 0;
+      background: linear-gradient(135deg, var(--navy-light), var(--navy));
+      display: flex; align-items: center; justify-content: center; font-size: 60px;
+    }
+    .modal-body { padding: 22px; }
+    .m-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 20px; padding: 3px 12px;
+      font-size: 11.5px; color: var(--gold); margin-bottom: 12px;
+    }
+    .m-title {
+      font-family: 'Tiro Bangla', serif; font-size: 22px;
+      color: var(--white); line-height: 1.3; margin-bottom: 3px;
+    }
+    .m-sub { font-size: 13px; color: var(--text-muted); font-style: italic; margin-bottom: 2px; }
+    .m-owner { font-size: 13px; color: var(--text-muted); margin-bottom: 2px; }
+    .m-owner span { color: var(--gold-light); font-weight: 600; }
+    .m-divider {
+      height: 1px; background: linear-gradient(90deg, var(--gold), transparent);
+      opacity: 0.35; margin: 14px 0;
+    }
+    .m-row {
+      display: flex; align-items: flex-start;
+      gap: 11px; margin-bottom: 13px; font-size: 14px; color: var(--text-main);
+    }
+    .m-icon { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+    .m-lbl { font-size: 10.5px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+    .m-row a { color: var(--gold-light); text-decoration: none; word-break: break-all; }
+    .m-row a:hover { text-decoration: underline; }
+    .btn-row { display: flex; gap: 9px; margin-top: 18px; flex-wrap: wrap; }
+    .btn-ph, .btn-wa, .btn-map {
+      flex: 1; min-width: 90px;
+      display: flex; align-items: center; justify-content: center; gap: 7px;
+      border-radius: 10px; padding: 11px 8px;
+      font-family: 'Hind Siliguri', sans-serif; font-size: 13.5px; font-weight: 600;
+      cursor: pointer; text-decoration: none; transition: all 0.22s;
+    }
+    .btn-ph  { background: var(--navy-light); border: 1px solid var(--card-border); color: var(--text-main); }
+    .btn-ph:hover  { border-color: var(--gold); color: var(--gold-light); }
+    .btn-wa  { background: #25D366; border: 1px solid #1ebe5d; color: #fff; }
+    .btn-wa:hover  { background: #1ebe5d; box-shadow: 0 4px 14px rgba(37,211,102,0.35); }
+    .btn-map { background: #1a73e8; border: 1px solid #1558b0; color: #fff; }
+    .btn-map:hover { background: #1558b0; box-shadow: 0 4px 14px rgba(26,115,232,0.35); }
+    .btn-ico { width: 18px; height: 18px; flex-shrink: 0; }
+    .modal-close {
+      position: absolute; top: 12px; right: 12px;
+      width: 30px; height: 30px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.15);
+      color: var(--white); font-size: 15px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s; z-index: 10;
+    }
+    .modal-close:hover { background: rgba(201,168,76,0.3); }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative; z-index: 1; text-align: center;
+      padding: 22px; color: var(--text-muted); font-size: 12.5px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    footer span { color: var(--gold); }
+
+    /* ── UTILS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--navy-light); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+    @media (max-width: 480px) {
+      .grid { grid-template-columns: 1fr 1fr; gap: 11px; }
+      .m-title { font-size: 19px; }
+      .btn-row { flex-direction: column; }
+    }
+    @media (max-width: 320px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-wrap">
+    <img src="logo.jpg" alt="SKWS Logo" class="logo-img" />
+    <div class="header-text">
+      <div class="org-en">Satyer Kafela Welfare Society Family</div>
+      <div class="gold-bar"></div>
+      <div class="org-bn">সত্যের কাফেলা ওয়েলফেয়ার সোসাইটি ফ্যামিলি</div>
+      <div class="org-sub">৩ নং ওয়ার্ড, সিদ্ধিরগঞ্জ, নারায়ণগঞ্জ &nbsp;·&nbsp; <span>সদস্য সেবা ডিরেক্টরি</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main>
+  <div class="search-wrap">
+    <div class="search-box">
+      <span class="search-ico">🔍</span>
+      <input type="text" id="searchInput" placeholder="নাম, সেবা বা ঠিকানা দিয়ে খুঁজুন..." autocomplete="off" />
+      <button class="search-btn" onclick="doSearch()">খুঁজুন</button>
+    </div>
+  </div>
+
+  <div class="filter-wrap">
+    <div class="filter-label">বিভাগ অনুযায়ী দেখুন</div>
+    <div class="filter-list" id="filterList"></div>
+  </div>
+
+  <div class="state-box" id="loadingEl">
+    <div class="spinner"></div>
+    <p>তথ্য লোড হচ্ছে...</p>
+  </div>
+
+  <div class="results-info" id="resultsInfo"><b id="resultsCount">0</b>টি এন্ট্রি পাওয়া গেছে</div>
+  <div class="grid" id="grid"></div>
+  <div class="state-box" id="emptyEl" style="display:none">
+    <div class="ico">🔎</div><p>কোনো ফলাফল পাওয়া যায়নি</p>
+  </div>
+</main>
+
+<footer>© ২০২৫ <span>সত্যের কাফেলা ওয়েলফেয়ার সোসাইটি ফ্যামিলি</span></footer>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay" onclick="closeOutside(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════
+//  STEP 1 — Paste your Google Sheet CSV URL below
+// ════════════════════════════════════════════════
+const SHEET_URL = 'YOUR_GOOGLE_SHEET_CSV_URL_HERE';
+
+// ════════════════════════════════════════════════
+//  GOOGLE SHEET — EXACT COLUMN ORDER (Row 1 headers)
+//  name | category | owner | address | phone | whatsapp | photo | description | social | maplink
+// ════════════════════════════════════════════════
+
+// ════════════════════════════════════════════════
+//  ADMIN: Add any new category name + icon here.
+//  If a category is typed in the sheet but not listed
+//  below it will still work — just shows default 🏪 icon.
+// ════════════════════════════════════════════════
+const CAT_ICONS = {
+  'খাদ্য ও মুদিখানা':        '🛒',
+  'পোশাক ও টেইলার':          '👗',
+  'স্বাস্থ্য ও চিকিৎসা':    '🏥',
+  'ইলেকট্রনিক্স ও মেরামত':   '🔧',
+  'শিক্ষা ও প্রতিষ্ঠান':     '📚',
+  'অন্যান্য সেবা':            '🤝',
+  'বিউটি ও সেলুন':            '💇',
+  'পরিবহন':                   '🚗',
+  'নির্মাণ ও মিস্ত্রি':       '🏗️',
+  'পেশাদার সেবা':              '💼',
+  'কেটারিং ও হোম ফুড':        '🍱',
+};
+const DEFAULT_ICON = '🏪';
+
+// ════════════════════════════════════════════════
+//  ADMIN: Categories where the PERSON's name is the
+//  main title on the card (not the shop/service name).
+//  Add any new personal-service category names here.
+// ════════════════════════════════════════════════
+const PERSONAL_CATS = [
+  'শিক্ষা ও প্রতিষ্ঠান',
+  'অন্যান্য সেবা',
+  'পেশাদার সেবা',
+  'পরিবহন',
+];
+
+// ════════════════════════════════════════════════
+//  DEMO DATA — shown until Sheet is connected.
+//  Delete these entries once your Sheet is live.
+// ════════════════════════════════════════════════
+const DEMO = [
+  { name:'রহমান মুদিখানা', category:'খাদ্য ও মুদিখানা', owner:'মোঃ আব্দুর রহমান', address:'১২ নং রোড, মিরপুর-১০, ঢাকা', phone:'+880 1711-000001', whatsapp:'8801711000001', photo:'', description:'তাজা শাকসবজি, মুদিপণ্য ও দৈনন্দিন প্রয়োজনীয় সব জিনিস।', social:'', maplink:'https://maps.google.com/?q=Mirpur+10+Dhaka' },
+  { name:'আল-আমিন টেইলার্স', category:'পোশাক ও টেইলার', owner:'মোঃ আল-আমিন হোসেন', address:'সেক্টর ৭, উত্তরা, ঢাকা-১২৩০', phone:'+880 1722-000002', whatsapp:'8801722000002', photo:'', description:'পুরুষ ও মহিলাদের পোশাক তৈরি ও পরিবর্তন।', social:'', maplink:'' },
+  { name:'ডাঃ করিম ক্লিনিক', category:'স্বাস্থ্য ও চিকিৎসা', owner:'ডাঃ আব্দুল করিম', address:'৫ নং লেন, মোহাম্মদপুর, ঢাকা', phone:'+880 1733-000003', whatsapp:'8801733000003', photo:'', description:'সাধারণ চিকিৎসা, ডায়াবেটিস ও প্রেশার পরীক্ষা।', social:'', maplink:'' },
+  { name:'ইসলাম ইলেকট্রনিক্স', category:'ইলেকট্রনিক্স ও মেরামত', owner:'মোঃ নুরুল ইসলাম', address:'গুলশান-২, ঢাকা-১২১২', phone:'+880 1744-000004', whatsapp:'8801744000004', photo:'', description:'মোবাইল, ল্যাপটপ ও ইলেকট্রনিক পণ্য মেরামত।', social:'', maplink:'' },
+  { name:'আল-নূর মাদরাসা', category:'শিক্ষা ও প্রতিষ্ঠান', owner:'হাফেজ মোঃ ইব্রাহিম খলিল', address:'৩ নং ওয়ার্ড, সিদ্ধিরগঞ্জ, নারায়ণগঞ্জ', phone:'+880 1755-000005', whatsapp:'8801755000005', photo:'', description:'হিফজ, কিতাব ও নাজেরা বিভাগ।', social:'', maplink:'https://maps.google.com/?q=Siddhirganj+Narayanganj' },
+  { name:'হোম টিউটর', category:'শিক্ষা ও প্রতিষ্ঠান', owner:'মোঃ সাইফুল ইসলাম', address:'৩ নং ওয়ার্ড, সিদ্ধিরগঞ্জ', phone:'+880 1766-000006', whatsapp:'8801766000006', photo:'', description:'ক্লাস ১–১০, গণিত, বিজ্ঞান ও ইংরেজি।', social:'', maplink:'' },
+  { name:'ড্রাইভিং সার্ভিস', category:'অন্যান্য সেবা', owner:'মোঃ কামাল হোসেন', address:'৩ নং ওয়ার্ড, সিদ্ধিরগঞ্জ', phone:'+880 1777-000007', whatsapp:'8801777000007', photo:'', description:'ব্যক্তিগত গাড়ি চালানোর সেবা।', social:'', maplink:'' },
+];
+
+// ════════════════════════════════════════════════
+//  STATE
+// ════════════════════════════════════════════════
+let allData = [], activeCat = 'all', searchQ = '';
+
+// ════════════════════════════════════════════════
+//  LOAD DATA
+// ════════════════════════════════════════════════
+async function loadData() {
+  if (SHEET_URL === 'YOUR_GOOGLE_SHEET_CSV_URL_HERE') { allData = DEMO; ready(); return; }
+  try {
+    const r = await fetch(SHEET_URL);
+    allData = parseCSV(await r.text());
+    ready();
+  } catch(e) { console.warn('Sheet failed, using demo', e); allData = DEMO; ready(); }
+}
+
+// ════════════════════════════════════════════════
+//  CSV PARSER — handles quoted commas properly
+//  Columns: name|category|owner|address|phone|whatsapp|photo|description|social|maplink
+// ════════════════════════════════════════════════
+function parseCSV(text) {
+  const rows = text.trim().split('\n'), out = [];
+  for (let i = 1; i < rows.length; i++) {
+    const c = splitRow(rows[i]);
+    if (!c[0]) continue;
+    out.push({ name:c[0]||'', category:c[1]||'অন্যান্য সেবা', owner:c[2]||'', address:c[3]||'', phone:c[4]||'', whatsapp:c[5]||'', photo:c[6]||'', description:c[7]||'', social:c[8]||'', maplink:c[9]||'' });
+  }
+  return out;
+}
+function splitRow(row) {
+  const cols = []; let cur = '', inQ = false;
+  for (let i = 0; i < row.length; i++) {
+    const ch = row[i];
+    if (ch === '"') { inQ = !inQ; continue; }
+    if (ch === ',' && !inQ) { cols.push(cur.trim()); cur = ''; continue; }
+    cur += ch;
+  }
+  cols.push(cur.trim());
+  return cols;
+}
+
+// ════════════════════════════════════════════════
+//  READY
+// ════════════════════════════════════════════════
+function ready() {
+  document.getElementById('loadingEl').style.display = 'none';
+  buildFilters();
+  render();
+}
+
+// ════════════════════════════════════════════════
+//  DYNAMIC FILTER BUTTONS — auto-generated from data
+// ════════════════════════════════════════════════
+function buildFilters() {
+  const cats = ['all', ...new Set(allData.map(s => s.category).filter(Boolean))];
+  const list = document.getElementById('filterList');
+  list.innerHTML = '';
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'f-btn' + (cat === 'all' ? ' active' : '');
+    btn.dataset.cat = cat;
+    btn.textContent = cat === 'all' ? '🌐 সবাই' : `${CAT_ICONS[cat] || DEFAULT_ICON} ${cat}`;
+    btn.onclick = () => { document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); activeCat = cat; render(); };
+    list.appendChild(btn);
+  });
+}
+
+// ════════════════════════════════════════════════
+//  RENDER CARDS
+// ════════════════════════════════════════════════
+function render() {
+  const q = searchQ.toLowerCase();
+  const filtered = allData.filter(s => {
+    const matchCat = activeCat === 'all' || s.category === activeCat;
+    const matchQ = !q || [s.name, s.owner, s.category, s.address, s.description].some(f => f.toLowerCase().includes(q));
+    return matchCat && matchQ;
+  });
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  document.getElementById('emptyEl').style.display   = filtered.length === 0 ? 'block' : 'none';
+  document.getElementById('resultsInfo').style.display = filtered.length > 0 ? 'block' : 'none';
+  document.getElementById('resultsCount').textContent  = filtered.length;
+
+  filtered.forEach((s, i) => {
+    const icon = CAT_ICONS[s.category] || DEFAULT_ICON;
+    const personal = PERSONAL_CATS.includes(s.category) && s.owner;
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.style.animation = `fadeUp 0.35s ${i * 0.04}s ease both`;
+    card.innerHTML = `
+      <div class="card-badge">${icon} ${s.category}</div>
+      <div class="card-title">${personal ? s.owner : s.name}</div>
+      ${personal && s.name  ? `<div class="card-sub">${s.name}</div>` : ''}
+      ${!personal && s.owner ? `<div class="card-sub">মালিক: ${s.owner}</div>` : ''}
+      ${s.address ? `<div class="card-loc">📍 ${s.address}</div>` : ''}
+      <div class="card-arrow">→</div>`;
+    card.onclick = () => openModal(s);
+    grid.appendChild(card);
+  });
+}
+
+// ════════════════════════════════════════════════
+//  SEARCH
+// ════════════════════════════════════════════════
+function doSearch() { searchQ = document.getElementById('searchInput').value.trim(); render(); }
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('searchInput').addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+});
+
+// ════════════════════════════════════════════════
+//  MODAL
+// ════════════════════════════════════════════════
+const SVG_PHONE = `<svg class="btn-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>`;
+const SVG_WA    = `<svg class="btn-ico" viewBox="0 0 32 32" fill="currentColor"><path d="M16 2.667C8.64 2.667 2.667 8.64 2.667 16c0 2.347.64 4.64 1.853 6.667L2.667 29.333l6.88-1.813A13.253 13.253 0 0016 29.333C23.36 29.333 29.333 23.36 29.333 16S23.36 2.667 16 2.667zm0 2.666c5.88 0 10.667 4.787 10.667 10.667S21.88 26.667 16 26.667c-1.947 0-3.84-.533-5.493-1.547l-.387-.24-4.013 1.054 1.054-3.893-.267-.4A10.627 10.627 0 015.333 16C5.333 10.12 10.12 5.333 16 5.333zm-3.2 5.334c-.24 0-.613.093-.947.453-.32.347-1.24 1.213-1.24 2.96 0 1.747 1.267 3.44 1.44 3.68.187.24 2.48 3.813 6.027 5.2 3 1.173 3.547.933 4.187.88.64-.053 2.08-.853 2.373-1.68.293-.827.293-1.533.2-1.68-.093-.147-.333-.24-.693-.427-.36-.187-2.08-1.027-2.4-1.147-.32-.12-.56-.187-.8.187-.24.36-.92 1.147-1.12 1.387-.2.24-.4.267-.76.08-.36-.187-1.52-.56-2.893-1.787-1.067-.96-1.787-2.133-2-2.493-.2-.36-.013-.547.16-.733.16-.16.36-.427.547-.64.187-.213.24-.36.36-.6.12-.24.067-.453-.013-.64-.08-.187-.8-1.947-1.12-2.667-.293-.693-.6-.587-.8-.6-.2-.013-.44-.013-.68-.013z"/></svg>`;
+const SVG_MAP   = `<svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>`;
+
+function openModal(s) {
+  const icon = CAT_ICONS[s.category] || DEFAULT_ICON;
+  const personal = PERSONAL_CATS.includes(s.category) && s.owner;
+  document.getElementById('modalContent').innerHTML = `
+    ${s.photo ? `<img src="${s.photo}" class="modal-photo" alt="${s.name}" onerror="this.outerHTML='<div class=modal-photo-ph>${icon}</div>'" />` : `<div class="modal-photo-ph">${icon}</div>`}
+    <div class="modal-body">
+      <div class="m-badge">${icon} ${s.category}</div>
+      ${personal
+        ? `<div class="m-title">${s.owner}</div>${s.name ? `<div class="m-sub">${s.name}</div>` : ''}`
+        : `<div class="m-title">${s.name}</div>${s.owner ? `<div class="m-owner">মালিক: <span>${s.owner}</span></div>` : ''}`
+      }
+      <div class="m-divider"></div>
+      ${s.address     ? `<div class="m-row"><span class="m-icon">📍</span><div><div class="m-lbl">ঠিকানা</div>${s.address}</div></div>` : ''}
+      ${s.description ? `<div class="m-row"><span class="m-icon">📝</span><div><div class="m-lbl">বিবরণ</div>${s.description}</div></div>` : ''}
+      ${s.phone       ? `<div class="m-row"><span class="m-icon">📞</span><div><div class="m-lbl">ফোন নম্বর</div>${s.phone}</div></div>` : ''}
+      ${s.social      ? `<div class="m-row"><span class="m-icon">🔗</span><div><div class="m-lbl">সোশ্যাল / ওয়েবসাইট</div><a href="${s.social}" target="_blank">${s.social}</a></div></div>` : ''}
+      ${s.maplink     ? `<div class="m-row"><span class="m-icon">🗺️</span><div><div class="m-lbl">লোকেশন</div><a href="${s.maplink}" target="_blank">গুগল ম্যাপে দেখুন</a></div></div>` : ''}
+      <div class="btn-row">
+        ${s.phone    ? `<a class="btn-ph"  href="tel:${s.phone}">${SVG_PHONE} ফোন</a>` : ''}
+        ${s.whatsapp ? `<a class="btn-wa"  href="https://wa.me/${s.whatsapp.replace(/\D/g,'')}" target="_blank">${SVG_WA} WhatsApp</a>` : ''}
+        ${s.maplink  ? `<a class="btn-map" href="${s.maplink}" target="_blank">${SVG_MAP} ম্যাপ</a>` : ''}
+      </div>
+    </div>`;
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() { document.getElementById('overlay').classList.remove('open'); document.body.style.overflow = ''; }
+function closeOutside(e) { if (e.target === document.getElementById('overlay')) closeModal(); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+loadData();
+</script>
+</body>
+</html>
