@@ -93,7 +93,7 @@
     .contact-btn {
       display: inline-flex; align-items: center; justify-content: center;
       gap: 8px; padding: 9px 16px;
-      background: rgba(201,168,76,0.15); backdrop-filter: blur(8px);
+      background: rgba(201,168,76,0.15); backdrop-filter: blur(5px);
       border: 1px solid rgba(201,168,76,0.35);
       color: var(--gold); text-decoration: none;
       border-radius: 25px; font-size: 12px; font-weight: 600;
@@ -126,7 +126,7 @@
     .search-wrap { margin-bottom: 24px; animation: fadeUp 0.4s ease both; }
     .search-box {
       display: flex; align-items: center;
-      background: rgba(15,31,61,0.6); backdrop-filter: blur(10px);
+      background: rgba(15,31,61,0.6); backdrop-filter: blur(5px);
       border: 1px solid rgba(201,168,76,0.3);
       border-radius: 50px; padding: 4px 4px 4px 18px;
       gap: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);
@@ -164,7 +164,7 @@
     }
     .filter-list { display: flex; flex-wrap: wrap; gap: 8px; }
     .f-btn {
-      background: rgba(15,31,61,0.5); backdrop-filter: blur(8px);
+      background: rgba(15,31,61,0.5); backdrop-filter: blur(5px);
       border: 1px solid rgba(201,168,76,0.2);
       color: var(--text-muted); border-radius: 30px; padding: 7px 16px;
       font-family: 'Hind Siliguri', sans-serif; font-size: 13px; font-weight: 500;
@@ -191,7 +191,7 @@
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px,1fr)); gap: 16px; }
 
     .card {
-      background: rgba(15,31,61,0.6); backdrop-filter: blur(10px);
+      background: rgba(15,31,61,0.6); backdrop-filter: blur(5px);
       border: 1px solid rgba(201,168,76,0.2);
       border-radius: var(--radius); padding: 18px 18px 28px;
       cursor: pointer; position: relative; overflow: hidden;
@@ -211,7 +211,7 @@
     .card:hover::before { opacity: 1; }
     .card-badge {
       display: inline-flex; align-items: center; gap: 5px;
-      background: rgba(201,168,76,0.12); backdrop-filter: blur(5px);
+      background: rgba(201,168,76,0.12); backdrop-filter: blur(3px);
       border: 1px solid rgba(201,168,76,0.25);
       border-radius: 20px; padding: 4px 11px;
       font-size: 11.5px; color: var(--gold); font-weight: 500; margin-bottom: 10px;
@@ -242,7 +242,7 @@
     /* ── MODERN MODAL ── */
     .overlay {
       position: fixed; inset: 0; background: rgba(5,12,28,0.92);
-      backdrop-filter: blur(12px); z-index: 100;
+      backdrop-filter: blur(5px); z-index: 100;
       display: flex; align-items: center; justify-content: center;
       padding: 16px; opacity: 0; pointer-events: none; transition: opacity 0.3s;
     }
@@ -254,11 +254,11 @@
       border-radius: 20px; max-width: 550px; width: 100%;
       max-height: 92vh; overflow-y: auto;
       box-shadow: 0 24px 80px rgba(0,0,0,0.8), 0 0 60px rgba(201,168,76,0.1);
-      transform: translateY(30px) scale(0.95);
-      transition: transform 0.4s cubic-bezier(0.23,1,0.320,1);
+      transform: translateY(0) scale(1);
+      transition: none;
       position: relative;
     }
-    .overlay.open .modal { transform: translateY(0) scale(1); }
+    .overlay.open .modal { transform: translateY(0) scale(1); transition: none; }
 
     /* ── IMAGE GALLERY ── */
     .img-gallery {
@@ -275,7 +275,7 @@
     }
     .img-counter {
       position: absolute; bottom: 12px; right: 14px;
-      background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(5px);
       color: var(--white); padding: 5px 10px;
       border-radius: 20px; font-size: 12px; font-weight: 600;
       border: 1px solid rgba(201,168,76,0.3);
@@ -289,7 +289,7 @@
     }
     .img-btn {
       width: 36px; height: 36px;
-      background: rgba(0,0,0,0.5); backdrop-filter: blur(8px);
+      background: rgba(0,0,0,0.5); backdrop-filter: blur(5px);
       border: 1px solid rgba(201,168,76,0.3);
       color: var(--gold);
       border-radius: 50%;
@@ -309,7 +309,7 @@
     }
     .m-badge {
       display: inline-flex; align-items: center; gap: 5px;
-      background: rgba(201,168,76,0.12); backdrop-filter: blur(8px);
+      background: rgba(201,168,76,0.12); backdrop-filter: blur(5px);
       border: 1px solid rgba(201,168,76,0.3);
       border-radius: 20px; padding: 4px 12px;
       font-size: 11.5px; color: var(--gold); margin-bottom: 12px;
@@ -330,7 +330,7 @@
     .m-row {
       display: flex; align-items: flex-start;
       gap: 12px; margin-bottom: 15px;
-      background: rgba(26,58,107,0.4); backdrop-filter: blur(8px);
+      background: rgba(26,58,107,0.4); backdrop-filter: blur(5px);
       padding: 12px 13px; border-radius: 12px;
       border-left: 3px solid var(--gold);
       transition: all 0.25s;
@@ -355,7 +355,7 @@
       border: 1px solid;
     }
     .btn-ph  {
-      background: rgba(26,58,107,0.6); backdrop-filter: blur(8px);
+      background: rgba(26,58,107,0.6); backdrop-filter: blur(5px);
       border-color: var(--card-border); color: var(--text-main);
     }
     .btn-ph:hover  {
@@ -366,7 +366,7 @@
       transform: translateY(-2px);
     }
     .btn-wa  {
-      background: rgba(37,211,102,0.2); backdrop-filter: blur(8px);
+      background: rgba(37,211,102,0.2); backdrop-filter: blur(5px);
       border-color: #25D366; color: #25D366;
     }
     .btn-wa:hover  {
@@ -376,7 +376,7 @@
       transform: translateY(-2px);
     }
     .btn-map {
-      background: rgba(26,115,232,0.2); backdrop-filter: blur(8px);
+      background: rgba(26,115,232,0.2); backdrop-filter: blur(5px);
       border-color: #1a73e8; color: #1a73e8;
     }
     .btn-map:hover {
@@ -389,7 +389,7 @@
     .modal-close {
       position: absolute; top: 12px; right: 12px;
       width: 32px; height: 32px; border-radius: 50%;
-      background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(5px);
       border: 1px solid rgba(201,168,76,0.3);
       color: var(--white); font-size: 16px; cursor: pointer;
       display: flex; align-items: center; justify-content: center;
