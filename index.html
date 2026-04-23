@@ -84,10 +84,37 @@
     }
     .org-sub { font-size: 12.5px; color: var(--text-muted); }
     .org-sub span { color: var(--gold); font-weight: 500; }
+    
+    /* ── CONTACT SECTION ── */
+    .contact-section {
+      display: flex; align-items: center; justify-content: center;
+      gap: 16px; margin-top: 18px; flex-wrap: wrap;
+    }
+    .contact-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; padding: 9px 16px;
+      background: rgba(201,168,76,0.15); backdrop-filter: blur(8px);
+      border: 1px solid rgba(201,168,76,0.35);
+      color: var(--gold); text-decoration: none;
+      border-radius: 25px; font-size: 12px; font-weight: 600;
+      cursor: pointer; transition: all 0.3s;
+      font-family: 'Hind Siliguri', sans-serif;
+    }
+    .contact-btn:hover {
+      background: rgba(201,168,76,0.3);
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201,168,76,0.25);
+    }
+    .contact-btn .ico { font-size: 16px; }
+    
     @media (max-width: 460px) {
       .logo-wrap { flex-direction: column; gap: 12px; }
       .header-text { text-align: center; }
       .gold-bar { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+      .contact-section { gap: 10px; margin-top: 14px; }
+      .contact-btn { padding: 8px 13px; font-size: 11px; }
     }
 
     main {
@@ -408,6 +435,17 @@
       <div class="gold-bar"></div>
       <div class="org-bn">সত্যের কাফেলা ওয়েলফেয়ার সোসাইটি ফ্যামিলি</div>
       <div class="org-sub">৩ নং ওয়ার্ড, সিদ্ধিরগঞ্জ, নারায়ণগঞ্জ &nbsp;·&nbsp; <span>সদস্য সেবা ডিরেক্টরি</span> &nbsp;·&nbsp; Developed by <span>Jubayer Ahammed</span></div>
+      <div class="contact-section">
+        <a href="https://chat.whatsapp.com/Ct8oMO0JdmYIhXSAbZ67H5?mode=gi_t" target="_blank" class="contact-btn">
+          <span class="ico">💬</span> WhatsApp গ্রুপ
+        </a>
+        <a href="https://www.facebook.com/satyerkafelawelfaresociety" target="_blank" class="contact-btn">
+          <span class="ico">📘</span> ফেসবুক পেজ
+        </a>
+        <a href="https://wa.me/qr/2F67MQTRLGERA1" target="_blank" class="contact-btn">
+          <span class="ico">👤</span> ডেভেলপার (Jubayer)
+        </a>
+      </div>
     </div>
   </div>
 </header>
@@ -438,7 +476,7 @@
   </div>
 </main>
 
-<footer>© 2026 <span>সত্যের কাফেলা ওয়েলফেয়ার সোসাইটি ফ্যামিলি</span></footer>
+<footer>© ২০২৫ <span>সত্যের কাফেলা ওয়েলফেয়ার সোসাইটি ফ্যামিলি</span></footer>
 
 <div class="overlay" id="overlay" onclick="closeOutside(event)">
   <div class="modal" id="modal">
@@ -448,7 +486,7 @@
 </div>
 
 <script>
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR9sED6tbMwCc9Uywma7DjZDgkXMwxHrPqIHhzTlQsxkC0QTWfvqvclMjpviSWzHoXPXzNKUbbL1496/pub?gid=0&single=true&output=csv';
+const SHEET_URL = 'YOUR_GOOGLE_SHEET_CSV_URL_HERE';
 
 const CAT_ICONS = {
   'খাদ্য ও মুদিখানা':        '🛒',
